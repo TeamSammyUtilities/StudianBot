@@ -1,5 +1,0 @@
-$nomention
-$onlyIf[$getChannelVar[glueID]!=none;]
-$var[message;$getMessage[$channelID;$getChannelVar[glueID]]]
-$deleteMessage[$channelID;$getChannelVar[glueID]]
-$setChannelVar[glueID;$sendMessage[$var[message];yes]]
