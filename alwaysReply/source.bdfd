@@ -1,0 +1,26 @@
+$nomention
+$cooldown[60s;]
+$var[gain;$random[15;30]]
+$setUserVar[xp;$sum[$getUserVar[xp];$var[gain]]]
+$var[xc;$getUserVar[xp]]
+$var[xn; $calculate[75*$getUserVar[level]**1.25*(1+0.015*$getUserVar[level])]]
+$if[$var[xc]>=$var[xn]]
+    $setUserVar[level;$sum[$getUserVar[level];1]]
+    $setUserVar[xp;0]
+    $var[lc;$getUserVar[level]]
+    <@$userID[$username]> congratulations! You are now level $var[lc]
+    $if[$var[lc]==5]
+        $roleGrant[$authorID;+1467083282892984493;+1466614746911342722;+1467083861421723792]
+        Gave L5, Reaction Permission, Nickname Permission role.
+    $elseif[$var[lc]==15]
+        $roleGrant[$authorID;+1467083348823248997;+1466614064896671835]
+        Gave L15, Image Permission role.
+    $elseif[$var[lc]==25]
+        $roleGrant[$authorID;+1467084163114074419;+1467526357696122941]
+        Gave L25, External Asset Permission role.
+    $elseif[$var[lc]==35]
+        $roleGrant[$authorID;+1467084360879706270;+1467526859842388050]
+        Gave L35, Poll Permission role.
+    $endif
+    $channelSendMessage[1452292197105012789;<@$userID[$username]> congratulations! You are now level $var[lc]]
+$endif
