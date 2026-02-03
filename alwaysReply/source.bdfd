@@ -1,5 +1,4 @@
 $nomention
-$cooldown[60s;]
 $var[gain;$random[15;30]]
 $setUserVar[xp;$sum[$getUserVar[xp];$var[gain]]]
 $var[xc;$getUserVar[xp]]
